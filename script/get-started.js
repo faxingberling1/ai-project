@@ -1,97 +1,142 @@
- // Smooth scrolling function
+        // User type selection
+        let selectedUserType = 'developer';
+
+        function selectUserType(type) {
+            selectedUserType = type;
+            
+            // Update UI
+            document.querySelectorAll('.user-type-card').forEach(card => {
+                card.classList.remove('selected');
+            });
+            event.currentTarget.classList.add('selected');
+            
+            // Show appropriate steps
+            if (type === 'developer') {
+                document.getElementById('developer-steps').classList.remove('hidden');
+                document.getElementById('customer-steps').classList.add('hidden');
+            } else {
+                document.getElementById('developer-steps').classList.add('hidden');
+                document.getElementById('customer-steps').classList.remove('hidden');
+            }
+            
+            // Scroll to steps
+            scrollToSection('developer-steps');
+        }
+
+        // Smooth scrolling function
         function scrollToSection(sectionId) {
             document.getElementById(sectionId).scrollIntoView({
                 behavior: 'smooth'
             });
         }
 
-        // Account type selection
-        function selectAccountType(type) {
-            // Remove selected class from all cards
-            document.querySelectorAll('.type-card').forEach(card => {
-                card.classList.remove('selected');
-                const button = card.querySelector('button');
-                button.classList.remove('btn-primary');
-                button.classList.add('btn-outline');
-                button.textContent = button.textContent.replace('Selected', 'Select');
-            });
+        // Developer functions
+        function createDeveloperAccount() {
+            alert('Creating developer account... Redirecting to developer signup.');
+            // In a real app: window.location.href = '/signup/developer';
+        }
 
-            // Add selected class to clicked card
-            const selectedCard = event.currentTarget;
-            selectedCard.classList.add('selected');
-            const button = selectedCard.querySelector('button');
-            button.classList.remove('btn-outline');
-            button.classList.add('btn-primary');
-            
-            if (type === 'developer') {
-                button.textContent = 'Selected - Developer';
-            } else if (type === 'team') {
-                button.textContent = 'Selected - Team';
-            } else if (type === 'enterprise') {
-                button.textContent = 'Contact Sales';
-            }
+        function showDeveloperPlans() {
+            alert('Showing developer plans...');
+            // In a real app: window.location.href = '/pricing#developer';
+        }
 
-            // Store selection
-            localStorage.setItem('selectedAccountType', type);
+        function showDocumentation() {
+            alert('Opening documentation...');
+            // In a real app: window.location.href = '/docs';
+        }
+
+        function showAPIDemo() {
+            alert('Loading API demo...');
+            // In a real app: window.location.href = '/api-demo';
+        }
+
+        function openSandbox() {
+            alert('Opening development sandbox...');
+            // In a real app: window.location.href = '/sandbox';
+        }
+
+        function showDeploymentOptions() {
+            alert('Showing deployment options...');
+            // In a real app: window.location.href = '/deployment';
+        }
+
+        function showBestPractices() {
+            alert('Showing best practices guide...');
+            // In a real app: window.location.href = '/best-practices';
+        }
+
+        // Customer functions
+        function showCustomerPlans() {
+            alert('Showing business plans... Redirecting to pricing.');
+            // In a real app: window.location.href = '/pricing';
+        }
+
+        function startFreeTrial() {
+            alert('Starting 14-day free trial... Redirecting to signup.');
+            // In a real app: window.location.href = '/signup/trial';
+        }
+
+        function setupBusinessAccount() {
+            alert('Launching business setup wizard...');
+            // In a real app: window.location.href = '/setup/business';
+        }
+
+        function importBusinessData() {
+            alert('Opening data import tool...');
+            // In a real app: window.location.href = '/import';
+        }
+
+        function browseAITools() {
+            alert('Browsing AI tools catalog...');
+            // In a real app: window.location.href = '/ai-tools';
+        }
+
+        function showUseCases() {
+            alert('Showing business use cases...');
+            // In a real app: window.location.href = '/use-cases';
+        }
+
+        function showSuccessStories() {
+            alert('Showing customer success stories...');
+            // In a real app: window.location.href = '/success-stories';
+        }
+
+        function contactCustomerSuccess() {
+            alert('Connecting you with customer success...');
+            // In a real app: window.location.href = '/contact/success';
         }
 
         // Quick start functions
         function startWithTutorial() {
-            alert('Starting guided tutorial... Redirecting to tutorial page.');
+            alert('Starting guided tutorial...');
             // In a real app: window.location.href = '/tutorials/beginner';
         }
 
         function useTemplate(templateType) {
-            alert(`Loading ${templateType} template... This will open in the workspace.`);
+            alert(`Loading ${templateType} template...`);
             // In a real app: window.location.href = `/templates/${templateType}`;
         }
 
-        function startFromScratch() {
-            alert('Opening blank workspace... Ready to build!');
-            // In a real app: window.location.href = '/workspace/new';
+        function bookDemo() {
+            alert('Opening demo scheduler...');
+            // In a real app: window.location.href = '/demo';
         }
 
         function createAccount() {
-            const selectedType = localStorage.getItem('selectedAccountType') || 'team';
-            alert(`Creating your ${selectedType} account... Redirecting to sign up.`);
-            // In a real app: window.location.href = `/signup?type=${selectedType}`;
+            if (selectedUserType === 'developer') {
+                createDeveloperAccount();
+            } else {
+                startFreeTrial();
+            }
         }
 
-        // Demo functions for step actions
-        function showAccountTypes() {
-            scrollToSection('account-types');
-        }
-
-        function showSignupOptions() {
-            alert('Sign up options: Email, Google, GitHub, or Microsoft account.');
-        }
-
-        function showSetupWizard() {
-            alert('Launching setup wizard... This will guide you through initial configuration.');
-        }
-
-        function showWorkspaceDemo() {
-            alert('Opening workspace demo... Showing interactive tour of features.');
-        }
-
-        function showTutorials() {
-            alert('Opening tutorials library... Browse our collection of learning resources.');
-        }
-
-        function showTemplates() {
-            alert('Opening template gallery... Explore our pre-built AI solutions.');
-        }
-
-        // Initialize default selection
+        // Initialize
         document.addEventListener('DOMContentLoaded', function() {
-            // Set team as default selected
-            const teamCard = document.querySelector('.type-card:nth-child(2)');
-            if (teamCard) {
-                teamCard.classList.add('selected');
-                const button = teamCard.querySelector('button');
-                button.classList.remove('btn-outline');
-                button.classList.add('btn-primary');
-                button.textContent = 'Selected - Team';
+            // Set developer as default
+            const developerCard = document.querySelector('.developer');
+            if (developerCard) {
+                developerCard.classList.add('selected');
             }
 
             // Add scroll animations
@@ -110,7 +155,7 @@
             }, observerOptions);
 
             // Observe elements for animation
-            const animatedElements = document.querySelectorAll('.step-card, .type-card, .option-card, .cta-content');
+            const animatedElements = document.querySelectorAll('.user-type-card, .step-card, .option-card, .cta-content');
             animatedElements.forEach(el => {
                 el.style.opacity = 0;
                 el.style.transform = 'translateY(20px)';
