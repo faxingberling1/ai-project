@@ -1,1 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Tools | Nexus AI</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/ai-agents.css">
+    <script src="script/ai-agents.js"></script>
+</head>
+  <body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <nav class="navbar">
+                <div class="logo">
+                    <i class="fas fa-robot"></i>
+                    <span>Nexus AI</span>
+                </div>
+                <div class="nav-links">
+                    <a href="index.html">Home</a>
+                    <a href="ai-tools.html">AI Tools</a>
+                    <a href="ai-agents.html">AI Agents</a>
+                    <a href="pricing.html">Pricing</a>
+                    <a href="blog.html">Blog</a>
+                    <a href="demo.html" class="active">Demo</a>
+                </div>
+                <div class="nav-buttons">
+                    <button class="btn btn-outline">Sign In</button>
+                    <button class="btn btn-primary">Get Started</button>
+                </div>
+            </nav>
+        </div>
+    </header>
 
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1>Schedule a Personalized Demo</h1>
+            <p>See how Nexus AI can transform your business with a one-on-one demonstration tailored to your specific needs and use cases.</p>
+            <div class="hero-buttons">
+                <button class="btn btn-primary">Watch Quick Overview</button>
+                <button class="btn btn-outline">Contact Sales</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Demo Section -->
+    <section class="demo-section">
+        <div class="container">
+            <div class="demo-container">
+                <!-- Demo Form -->
+                <div class="demo-form-container">
+                    <div class="form-header">
+                        <h2>Book Your Demo</h2>
+                        <p>Fill out the form below and we'll contact you to schedule your personalized demo</p>
+                    </div>
+
+                    <form class="demo-form" id="demoForm">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="firstName">First Name *</label>
+                                <input type="text" id="firstName" name="firstName" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="lastName">Last Name *</label>
+                                <input type="text" id="lastName" name="lastName" required>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="email">Work Email *</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="company">Company *</label>
+                            <input type="text" id="company" name="company" required>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="jobTitle">Job Title *</label>
+                                <input type="text" id="jobTitle" name="jobTitle" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="companySize">Company Size *</label>
+                                <select id="companySize" name="companySize" required>
+                                    <option value="">Select</option>
+                                    <option value="1-10">1-10 employees</option>
+                                    <option value="11-50">11-50 employees</option>
+                                    <option value="51-200">51-200 employees</option>
+                                    <option value="201-500">201-500 employees</option>
+                                    <option value="501-1000">501-1000 employees</option>
+                                    <option value="1000+">1000+ employees</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="interest">Primary Interest *</label>
+                            <select id="interest" name="interest" required>
+                                <option value="">Select</option>
+                                <option value="ai-agents">AI Agents</option>
+                                <option value="chatbots">AI Chatbots</option>
+                                <option value="automation">Workflow Automation</option>
+                                <option value="analytics">AI Analytics</option>
+                                <option value="custom">Custom AI Solutions</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="message">Specific Use Cases or Questions</label>
+                            <textarea id="message" name="message" placeholder="Tell us about your specific needs, challenges, or what you'd like to see in the demo..."></textarea>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="preferredDate">Preferred Date</label>
+                            <input type="text" id="preferredDate" name="preferredDate" readonly>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="preferredTime">Preferred Time</label>
+                            <input type="text" id="preferredTime" name="preferredTime" readonly>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary btn-large">Schedule My Demo</button>
+                    </form>
+
+                    <!-- Success Message -->
+                    <div class="success-message" id="successMessage">
+                        <div class="success-icon">
+                            <i class="fas fa-check"></i>
+                        </div>
+                        <h2>Demo Scheduled Successfully!</h2>
+                        <p>Thank you for your interest in Nexus AI. We've received your request and will contact you shortly to confirm your demo details.</p>
+                        <p style="margin-top: 20px; font-size: 0.9rem; color: rgba(255, 255, 255, 0.7);">Check your email for a confirmation message.</p>
+                    </div>
+                </div>
+
+                <!-- Calendar -->
+                <div class="calendar-container">
+                    <div class="calendar-header">
+                        <h3>Select Date & Time</h3>
+                        <div class="calendar-nav">
+                            <button id="prevMonth"><i class="fas fa-chevron-left"></i></button>
+                            <button id="nextMonth"><i class="fas fa-chevron-right"></i></button>
+                        </div>
+                    </div>
+
+                    <div class="calendar" id="calendar">
+                        <!-- Calendar will be generated by JavaScript -->
+                    </div>
+
+                    <div class="time-selection">
+                        <h4 style="margin-bottom: 15px; color: white;">Available Time Slots</h4>
+                        <div class="time-slots" id="timeSlots">
+                            <!-- Time slots will be generated by JavaScript -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Benefits Section -->
+    <section class="benefits-section">
+        <div class="container">
+            <h2 class="section-title">What to Expect in Your Demo</h2>
+            <div class="benefits-grid">
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-desktop"></i>
+                    </div>
+                    <h3>Live Product Walkthrough</h3>
+                    <p>See our AI tools in action with a real-time demonstration tailored to your business needs and use cases.</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-cogs"></i>
+                    </div>
+                    <h3>Technical Deep Dive</h3>
+                    <p>Get answers to your technical questions about implementation, integration, and customization options.</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3>ROI Analysis</h3>
+                    <p>Understand the potential impact on your business with a customized ROI assessment and use case analysis.</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <h3>Expert Consultation</h3>
+                    <p>Work with our AI specialists to develop a strategy that aligns with your business objectives and technical requirements.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq-section">
+        <div class="container">
+            <h2 class="section-title">Demo FAQs</h2>
+            <div class="faq-grid">
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>How long does the demo typically last?</span>
+                        <div class="faq-toggle">
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                    </div>
+                    <div class="faq-answer">
+                        Our standard demos last approximately 45 minutes, including time for Q&A. For more complex use cases or technical deep dives, we can schedule extended sessions up to 90 minutes.
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>Who should attend the demo?</span>
+                        <div class="faq-toggle">
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                    </div>
+                    <div class="faq-answer">
+                        We recommend including key decision-makers from both technical and business teams. This typically includes product managers, technical leads, and executives who will be involved in the implementation decision.
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>What preparation is needed before the demo?</span>
+                        <div class="faq-toggle">
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                    </div>
+                    <div class="faq-answer">
+                        No specific preparation is required. However, if you have particular use cases, challenges, or questions you'd like us to address, sharing them in advance helps us tailor the demo to your needs.
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>Can I request specific features to be shown?</span>
+                        <div class="faq-toggle">
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                    </div>
+                    <div class="faq-answer">
+                        Absolutely! We encourage you to specify any particular features, integrations, or use cases you're most interested in. This allows us to focus the demo on what matters most to your business.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta">
+        <div class="container">
+            <div class="cta-content pulse">
+                <h2>Ready to See Nexus AI in Action?</h2>
+                <p>Schedule your personalized demo today and discover how our AI solutions can transform your business operations.</p>
+                <button class="btn btn-primary btn-large" onclick="document.getElementById('demoForm').scrollIntoView({behavior: 'smooth'})">Schedule Demo Now</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <div class="logo">
+                        <i class="fas fa-robot"></i>
+                        <span>Nexus AI</span>
+                    </div>
+                    <p style="margin-top: 20px; color: rgba(255,255,255,0.7);">Empowering businesses with cutting-edge AI solutions.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#"><i class="fab fa-github"></i></a>
+                        <a href="#"><i class="fab fa-discord"></i></a>
+                    </div>
+                </div>
+                <div class="footer-column">
+                    <h3>Products</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">AI Chatbots</a></li>
+                        <li><a href="#">AI Agents</a></li>
+                        <li><a href="#">Automation Tools</a></li>
+                        <li><a href="#">API Documentation</a></li>
+                        <li><a href="#">Pricing</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Resources</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">Documentation</a></li>
+                        <li><a href="#">Tutorials</a></li>
+                        <li><a href="#">Blog</a></li>
+                        <li><a href="#">Case Studies</a></li>
+                        <li><a href="#">Community</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Company</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">Careers</a></li>
+                        <li><a href="#">Contact</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Terms of Service</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2023 Nexus AI. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+  </body>
+</html>
