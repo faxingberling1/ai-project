@@ -161,24 +161,15 @@
         }
 
         .hero h1 {
-           font-family: 'Inter', sans-serif; /* Ensure Inter is applied */
-           font-size: 4.5rem;
-           font-weight: 700;
-           line-height: 1.1;
-           margin-bottom: 30px;
-
-           /* Gradient Text */
-           background: linear-gradient(90deg, #ffffff 0%, var(--primary) 50%, var(--accent) 100%);
-           -webkit-background-clip: text;
-           -webkit-text-fill-color: transparent;
-
-           /* For Firefox support */
-           background-clip: text;
-           color: transparent;
-
-           /* Optional: smooth font rendering */
-           -webkit-font-smoothing: antialiased;
-           -moz-osx-font-smoothing: grayscale;
+            font-size: 4.5rem;
+            font-weight: 700;
+            line-height: 1.1;
+            margin-bottom: 30px;
+            background: linear-gradient(90deg, #fff 0%, var(--primary) 50%, var(--accent) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
 
         .hero p {
             font-size: 1.3rem;
