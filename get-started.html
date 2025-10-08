@@ -38,29 +38,74 @@
             <h1>Get Started with Nexus AI</h1>
             <p>Begin your AI journey in just a few simple steps. Choose your path and start building intelligent solutions today.</p>
             <div class="hero-buttons">
-                <button class="btn btn-primary btn-large" onclick="scrollToSection('steps')">Start Your Journey</button>
+                <button class="btn btn-primary btn-large" onclick="scrollToSection('user-type')">Start Your Journey</button>
                 <button class="btn btn-outline" onclick="scrollToSection('quick-start')">Quick Start Options</button>
             </div>
         </div>
     </section>
 
-    <!-- Get Started Steps -->
-    <section class="get-started-steps" id="steps">
+    <!-- User Type Selection -->
+    <section class="user-type-selection" id="user-type">
         <div class="container">
-            <h2 class="section-title">How to Get Started</h2>
+            <h2 class="section-title">Choose Your Path</h2>
+            <p style="text-align: center; color: rgba(255, 255, 255, 0.8); max-width: 700px; margin: 0 auto 40px; line-height: 1.6;">
+                Whether you're a developer building custom AI solutions or a business user looking to leverage AI tools, we have the perfect starting point for you.
+            </p>
+            <div class="user-types-grid">
+                <!-- Developer Path -->
+                <div class="user-type-card developer" onclick="selectUserType('developer')">
+                    <div class="user-type-icon">
+                        <i class="fas fa-code"></i>
+                    </div>
+                    <h3>Developer & Builder</h3>
+                    <p>I want to build custom AI solutions, integrate APIs, and develop applications using Nexus AI's platform.</p>
+                    <ul class="user-type-features">
+                        <li><i class="fas fa-check"></i> Full API access and documentation</li>
+                        <li><i class="fas fa-check"></i> Custom model training</li>
+                        <li><i class="fas fa-check"></i> SDKs and development tools</li>
+                        <li><i class="fas fa-check"></i> Advanced customization options</li>
+                        <li><i class="fas fa-check"></i> Technical support</li>
+                    </ul>
+                    <button class="btn btn-primary">Start Building</button>
+                </div>
+
+                <!-- Customer Path -->
+                <div class="user-type-card customer" onclick="selectUserType('customer')">
+                    <div class="user-type-icon">
+                        <i class="fas fa-rocket"></i>
+                    </div>
+                    <h3>Business User</h3>
+                    <p>I want to use ready-made AI tools to enhance my business operations without coding or technical setup.</p>
+                    <ul class="user-type-features">
+                        <li><i class="fas fa-check"></i> No-code AI tools</li>
+                        <li><i class="fas fa-check"></i> Pre-built templates</li>
+                        <li><i class="fas fa-check"></i> Simple subscription plans</li>
+                        <li><i class="fas fa-check"></i> Guided setup process</li>
+                        <li><i class="fas fa-check"></i> Dedicated customer support</li>
+                    </ul>
+                    <button class="btn btn-accent">Get Started Now</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Developer Path Steps -->
+    <section class="get-started-steps" id="developer-steps">
+        <div class="container">
+            <h2 class="section-title">Developer Journey</h2>
             <div class="steps-container">
                 <!-- Step 1 -->
                 <div class="step-card">
                     <div class="step-header">
                         <div class="step-number">1</div>
-                        <h3 class="step-title">Choose Your Account Type</h3>
+                        <h3 class="step-title">Create Developer Account</h3>
                     </div>
                     <div class="step-content">
-                        <p>Select the account type that best fits your needs. Whether you're an individual developer, a growing team, or an enterprise, we have the right plan for you.</p>
+                        <p>Sign up for a developer account to get full access to our APIs, SDKs, and development tools. Choose the plan that fits your project needs.</p>
                     </div>
                     <div class="step-actions">
-                        <button class="btn btn-primary" onclick="scrollToSection('account-types')">View Account Types</button>
-                        <button class="btn btn-outline" onclick="showAccountTypes()">Learn More</button>
+                        <button class="btn btn-primary" onclick="createDeveloperAccount()">Create Developer Account</button>
+                        <button class="btn btn-outline" onclick="showDeveloperPlans()">View Developer Plans</button>
                     </div>
                 </div>
 
@@ -68,14 +113,14 @@
                 <div class="step-card">
                     <div class="step-header">
                         <div class="step-number">2</div>
-                        <h3 class="step-title">Create Your Account</h3>
+                        <h3 class="step-title">Access Development Resources</h3>
                     </div>
                     <div class="step-content">
-                        <p>Sign up with your email or use one of our social authentication options. The process is quick, secure, and takes less than 2 minutes.</p>
+                        <p>Explore our comprehensive documentation, API references, and code examples to start building immediately.</p>
                     </div>
                     <div class="step-actions">
-                        <button class="btn btn-primary" onclick="window.location.href='signup.html'">Create Account</button>
-                        <button class="btn btn-outline" onclick="showSignupOptions()">Sign Up Options</button>
+                        <button class="btn btn-primary" onclick="showDocumentation()">View Documentation</button>
+                        <button class="btn btn-outline" onclick="showAPIDemo()">API Demo</button>
                     </div>
                 </div>
 
@@ -83,14 +128,14 @@
                 <div class="step-card">
                     <div class="step-header">
                         <div class="step-number">3</div>
-                        <h3 class="step-title">Set Up Your Workspace</h3>
+                        <h3 class="step-title">Build & Test Your Solution</h3>
                     </div>
                     <div class="step-content">
-                        <p>Configure your AI environment, connect your tools, and customize your dashboard. Our setup wizard will guide you through the process.</p>
+                        <p>Use our sandbox environment to build and test your AI applications with real-time debugging and monitoring tools.</p>
                     </div>
                     <div class="step-actions">
-                        <button class="btn btn-primary" onclick="showSetupWizard()">Start Setup</button>
-                        <button class="btn btn-outline" onclick="showWorkspaceDemo()">View Demo</button>
+                        <button class="btn btn-primary" onclick="openSandbox()">Open Sandbox</button>
+                        <button class="btn btn-outline" onclick="showTutorials()">View Tutorials</button>
                     </div>
                 </div>
 
@@ -98,74 +143,83 @@
                 <div class="step-card">
                     <div class="step-header">
                         <div class="step-number">4</div>
-                        <h3 class="step-title">Build Your First AI Solution</h3>
+                        <h3 class="step-title">Deploy to Production</h3>
                     </div>
                     <div class="step-content">
-                        <p>Start creating with our AI tools and agents. Follow our tutorials, use templates, or build from scratch with our comprehensive documentation.</p>
+                        <p>Deploy your AI solution with confidence using our CI/CD pipelines, monitoring dashboards, and scaling options.</p>
                     </div>
                     <div class="step-actions">
-                        <button class="btn btn-primary" onclick="showTutorials()">View Tutorials</button>
-                        <button class="btn btn-outline" onclick="showTemplates()">Browse Templates</button>
+                        <button class="btn btn-primary" onclick="showDeploymentOptions()">Deployment Options</button>
+                        <button class="btn btn-outline" onclick="showBestPractices()">Best Practices</button>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Account Type Selection -->
-    <section class="account-types" id="account-types">
+    <!-- Customer Path Steps -->
+    <section class="get-started-steps hidden" id="customer-steps">
         <div class="container">
-            <h2 class="section-title">Choose Your Account Type</h2>
-            <div class="types-grid">
-                <!-- Developer Account -->
-                <div class="type-card" onclick="selectAccountType('developer')">
-                    <div class="type-icon">
-                        <i class="fas fa-code"></i>
+            <h2 class="section-title">Business User Journey</h2>
+            <div class="steps-container">
+                <!-- Step 1 -->
+                <div class="step-card">
+                    <div class="step-header">
+                        <div class="step-number">1</div>
+                        <h3 class="step-title">Choose Your Plan</h3>
                     </div>
-                    <h3>Developer</h3>
-                    <p>Perfect for individual developers and AI enthusiasts building personal projects and experiments.</p>
-                    <ul class="type-features">
-                        <li><i class="fas fa-check"></i> Access to basic AI tools</li>
-                        <li><i class="fas fa-check"></i> 5,000 API calls/month</li>
-                        <li><i class="fas fa-check"></i> Community support</li>
-                        <li><i class="fas fa-check"></i> Public projects only</li>
-                    </ul>
-                    <button class="btn btn-outline">Select Developer</button>
+                    <div class="step-content">
+                        <p>Select the subscription plan that matches your business needs. Start with a free trial or choose from our Starter, Professional, or Enterprise plans.</p>
+                    </div>
+                    <div class="step-actions">
+                        <button class="btn btn-accent" onclick="showCustomerPlans()">View Plans & Pricing</button>
+                        <button class="btn btn-outline" onclick="startFreeTrial()">Start Free Trial</button>
+                    </div>
                 </div>
 
-                <!-- Team Account -->
-                <div class="type-card selected" onclick="selectAccountType('team')">
-                    <div class="type-icon">
-                        <i class="fas fa-users"></i>
+                <!-- Step 2 -->
+                <div class="step-card">
+                    <div class="step-header">
+                        <div class="step-number">2</div>
+                        <h3 class="step-title">Set Up Your Account</h3>
                     </div>
-                    <h3>Team</h3>
-                    <p>Ideal for small to medium teams collaborating on AI projects and business solutions.</p>
-                    <ul class="type-features">
-                        <li><i class="fas fa-check"></i> All AI tools & agents</li>
-                        <li><i class="fas fa-check"></i> 50,000 API calls/month</li>
-                        <li><i class="fas fa-check"></i> Priority support</li>
-                        <li><i class="fas fa-check"></i> Team collaboration</li>
-                        <li><i class="fas fa-check"></i> Private projects</li>
-                    </ul>
-                    <button class="btn btn-primary">Select Team</button>
+                    <div class="step-content">
+                        <p>Complete your business profile, add team members, and configure your workspace with our guided setup wizard.</p>
+                    </div>
+                    <div class="step-actions">
+                        <button class="btn btn-accent" onclick="setupBusinessAccount()">Setup Wizard</button>
+                        <button class="btn btn-outline" onclick="importBusinessData()">Import Business Data</button>
+                    </div>
                 </div>
 
-                <!-- Enterprise Account -->
-                <div class="type-card" onclick="selectAccountType('enterprise')">
-                    <div class="type-icon">
-                        <i class="fas fa-building"></i>
+                <!-- Step 3 -->
+                <div class="step-card">
+                    <div class="step-header">
+                        <div class="step-number">3</div>
+                        <h3 class="step-title">Choose Your AI Tools</h3>
                     </div>
-                    <h3>Enterprise</h3>
-                    <p>For large organizations requiring custom AI solutions, security, and dedicated support.</p>
-                    <ul class="type-features">
-                        <li><i class="fas fa-check"></i> Custom AI solutions</li>
-                        <li><i class="fas fa-check"></i> Unlimited API calls</li>
-                        <li><i class="fas fa-check"></i> 24/7 dedicated support</li>
-                        <li><i class="fas fa-check"></i> Advanced security</li>
-                        <li><i class="fas fa-check"></i> SLA guarantee</li>
-                        <li><i class="fas fa-check"></i> Custom training</li>
-                    </ul>
-                    <button class="btn btn-outline">Contact Sales</button>
+                    <div class="step-content">
+                        <p>Select from our pre-built AI tools for customer service, marketing, analytics, or operations. No technical skills required.</p>
+                    </div>
+                    <div class="step-actions">
+                        <button class="btn btn-accent" onclick="browseAITools()">Browse AI Tools</button>
+                        <button class="btn btn-outline" onclick="showUseCases()">View Use Cases</button>
+                    </div>
+                </div>
+
+                <!-- Step 4 -->
+                <div class="step-card">
+                    <div class="step-header">
+                        <div class="step-number">4</div>
+                        <h3 class="step-title">Go Live & Scale</h3>
+                    </div>
+                    <div class="step-content">
+                        <p>Launch your AI tools, monitor performance with our dashboards, and scale as your business grows with our flexible plans.</p>
+                    </div>
+                    <div class="step-actions">
+                        <button class="btn btn-accent" onclick="showSuccessStories()">Success Stories</button>
+                        <button class="btn btn-outline" onclick="contactCustomerSuccess()">Contact Customer Success</button>
+                    </div>
                 </div>
             </div>
         </div>
@@ -185,7 +239,7 @@
                         <i class="fas fa-graduation-cap"></i>
                     </div>
                     <h3>Guided Tutorial</h3>
-                    <p>Follow our step-by-step tutorial to build your first AI chatbot in under 30 minutes.</p>
+                    <p>Follow our step-by-step tutorial to build your first AI solution in under 30 minutes.</p>
                     <button class="btn btn-outline">Start Tutorial</button>
                 </div>
 
@@ -194,8 +248,8 @@
                     <div class="option-icon">
                         <i class="fas fa-robot"></i>
                     </div>
-                    <h3>Chatbot Template</h3>
-                    <p>Start with a pre-built chatbot template and customize it for your needs.</p>
+                    <h3>AI Chatbot</h3>
+                    <p>Deploy a customer service chatbot in minutes with our pre-built template.</p>
                     <button class="btn btn-outline">Use Template</button>
                 </div>
 
@@ -204,19 +258,19 @@
                     <div class="option-icon">
                         <i class="fas fa-chart-bar"></i>
                     </div>
-                    <h3>Analytics Dashboard</h3>
-                    <p>Deploy a ready-to-use AI analytics dashboard for your data analysis needs.</p>
+                    <h3>Business Analytics</h3>
+                    <p>Get instant insights with our AI-powered analytics dashboard.</p>
                     <button class="btn btn-outline">Use Template</button>
                 </div>
 
                 <!-- Option 4 -->
-                <div class="option-card" onclick="startFromScratch()">
+                <div class="option-card" onclick="bookDemo()">
                     <div class="option-icon">
-                        <i class="fas fa-code"></i>
+                        <i class="fas fa-calendar-check"></i>
                     </div>
-                    <h3>Build From Scratch</h3>
-                    <p>Start with a blank canvas and build your custom AI solution from the ground up.</p>
-                    <button class="btn btn-outline">Start Building</button>
+                    <h3>Personalized Demo</h3>
+                    <p>Schedule a 1-on-1 demo with our experts to see how AI can transform your business.</p>
+                    <button class="btn btn-outline">Book Demo</button>
                 </div>
             </div>
         </div>
