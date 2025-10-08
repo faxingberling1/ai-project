@@ -10,6 +10,18 @@
     <script src="script/pricing.js"></script>
 </head>
   <body>
+    <!-- Banner -->
+    <div class="banner">
+        <div class="container">
+            <div class="banner-content">
+                <div class="banner-text">
+                    <span class="banner-highlight">SPECIAL OFFER:</span> Get 20% off on annual plans. Limited time only!
+                </div>
+            </div>
+            <div class="banner-decoration"></div>
+        </div>
+    </div>
+
     <!-- Header -->
     <header>
         <div class="container">
@@ -19,10 +31,10 @@
                     <span>Nexus AI</span>
                 </div>
                 <div class="nav-links">
-                    <a href="home.html">Home</a>
+                    <a href="index.html">Home</a>
                     <a href="ai-tools.html">AI Tools</a>
                     <a href="ai-agents.html">AI Agents</a>
-                    <a href="pricing.html" class="active">Pricing</a>
+                    <a href="#" class="active">Pricing</a>
                     <a href="blog.html">Blog</a>
                 </div>
                 <div class="nav-buttons">
@@ -33,28 +45,29 @@
         </div>
     </header>
 
-    <!-- Page Header -->
-    <section class="page-header">
+    <!-- Pricing Hero Section -->
+    <section class="pricing-hero">
         <div class="container">
-            <h1>Simple, Transparent Pricing</h1>
-            <p>Choose the perfect plan for your needs. All plans include access to our core AI tools with no hidden fees.</p>
-            <div class="hero-buttons">
-                <button class="btn btn-primary">Start Free Trial</button>
-                <button class="btn btn-outline" onclick="location.href='schedule-demo.html'">Schedule Demo</button>
-            </div>
-        </div>
-    </section>
-
-    <!-- Billing Toggle -->
-    <section class="billing-toggle">
-        <div class="container">
-            <div style="display: flex; align-items: center; gap: 20px; justify-content: center;">
-                <span class="toggle-label active">Monthly</span>
-                <label class="toggle-switch">
-                    <input type="checkbox" id="billingToggle">
-                    <span class="toggle-slider"></span>
-                </label>
-                <span class="toggle-label">Annual <span class="savings-badge">Save 20%</span></span>
+            <div class="pricing-hero-content">
+                <h1>Flexible Pricing for Every AI Need</h1>
+                <p>Choose the perfect plan for your AI requirements. Scale up as your business grows with our comprehensive suite of AI tools and services.</p>
+                
+                <div class="service-categories">
+                    <button class="category-btn active" data-category="all">All Services</button>
+                    <button class="category-btn" data-category="agents">AI Agents</button>
+                    <button class="category-btn" data-category="chatbots">AI Chatbots</button>
+                    <button class="category-btn" data-category="automation">Automation</button>
+                    <button class="category-btn" data-category="analytics">Analytics</button>
+                </div>
+                
+                <div class="pricing-toggle">
+                    <span class="toggle-label">Monthly</span>
+                    <label class="toggle-switch">
+                        <input type="checkbox" id="billing-toggle">
+                        <span class="toggle-slider"></span>
+                    </label>
+                    <span class="toggle-label">Annual <span class="discount-badge">Save 20%</span></span>
+                </div>
             </div>
         </div>
     </section>
@@ -62,238 +75,378 @@
     <!-- Pricing Plans -->
     <section class="pricing-plans">
         <div class="container">
-            <div class="plans-grid">
+            <div class="plans-container">
                 <!-- Starter Plan -->
-                <div class="plan-card">
-                    <div class="plan-header">
-                        <h3 class="plan-name">Starter</h3>
-                        <p class="plan-description">Perfect for individuals and small projects</p>
-                        <div class="plan-price">
-                            <span class="price-amount">$29</span>
-                            <span class="price-period">/month</span>
-                        </div>
+                <div class="plan-card floating">
+                    <div class="plan-icon">
+                        <i class="fas fa-seedling"></i>
                     </div>
+                    <h3 class="plan-name">Starter</h3>
+                    <p class="plan-description">Perfect for individuals and small teams getting started with AI</p>
+                    
+                    <div class="plan-price">
+                        <div class="price-amount monthly-price">$29</div>
+                        <div class="price-amount annual-price" style="display: none;">$23<span style="font-size: 1.5rem;">.20</span></div>
+                        <div class="price-period">per month</div>
+                        <div class="price-note annual-price" style="display: none;">billed annually</div>
+                    </div>
+                    
                     <div class="plan-features">
                         <div class="feature-item">
                             <i class="fas fa-check"></i>
-                            <span>Up to 5 AI Agents</span>
+                            <span class="feature-text">5 AI Chatbot Agents</span>
                         </div>
                         <div class="feature-item">
                             <i class="fas fa-check"></i>
-                            <span>10,000 API calls/month</span>
+                            <span class="feature-text">3 AI Automation Workflows</span>
                         </div>
                         <div class="feature-item">
                             <i class="fas fa-check"></i>
-                            <span>Basic AI Tools Access</span>
+                            <span class="feature-text">1,000 AI requests/month</span>
                         </div>
                         <div class="feature-item">
                             <i class="fas fa-check"></i>
-                            <span>Email Support</span>
+                            <span class="feature-text">Basic Analytics Dashboard</span>
                         </div>
-                        <div class="feature-item disabled">
-                            <i class="fas fa-times"></i>
-                            <span>Advanced Analytics</span>
+                        <div class="feature-item">
+                            <i class="fas fa-check"></i>
+                            <span class="feature-text">Email Support</span>
                         </div>
-                        <div class="feature-item disabled">
+                        <div class="feature-item">
                             <i class="fas fa-times"></i>
-                            <span>Custom AI Models</span>
+                            <span class="feature-text disabled">Custom AI Models</span>
                         </div>
-                        <div class="feature-item disabled">
+                        <div class="feature-item">
                             <i class="fas fa-times"></i>
-                            <span>Priority Support</span>
+                            <span class="feature-text disabled">Advanced Workflows</span>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-times"></i>
+                            <span class="feature-text disabled">API Access</span>
                         </div>
                     </div>
-                    <button class="btn btn-outline" style="width: 100%;">Get Started</button>
+                    
+                    <div class="plan-button">
+                        <button class="btn btn-outline" style="width: 100%;">Get Started</button>
+                    </div>
                 </div>
-
+                
                 <!-- Professional Plan -->
-                <div class="plan-card popular">
-                    <div class="plan-popular-badge">Most Popular</div>
-                    <div class="plan-header">
-                        <h3 class="plan-name">Professional</h3>
-                        <p class="plan-description">Ideal for growing businesses and teams</p>
-                        <div class="plan-price">
-                            <span class="price-amount">$79</span>
-                            <span class="price-period">/month</span>
-                        </div>
+                <div class="plan-card popular floating delay-1">
+                    <div class="plan-badge">MOST POPULAR</div>
+                    <div class="plan-icon">
+                        <i class="fas fa-rocket"></i>
                     </div>
+                    <h3 class="plan-name">Professional</h3>
+                    <p class="plan-description">Ideal for growing businesses with advanced AI needs</p>
+                    
+                    <div class="plan-price">
+                        <div class="price-amount monthly-price">$79</div>
+                        <div class="price-amount annual-price" style="display: none;">$63<span style="font-size: 1.5rem;">.20</span></div>
+                        <div class="price-period">per month</div>
+                        <div class="price-note annual-price" style="display: none;">billed annually</div>
+                    </div>
+                    
                     <div class="plan-features">
                         <div class="feature-item">
                             <i class="fas fa-check"></i>
-                            <span>Up to 20 AI Agents</span>
+                            <span class="feature-text">20 AI Chatbot Agents</span>
                         </div>
                         <div class="feature-item">
                             <i class="fas fa-check"></i>
-                            <span>100,000 API calls/month</span>
+                            <span class="feature-text">10 AI Automation Workflows</span>
                         </div>
                         <div class="feature-item">
                             <i class="fas fa-check"></i>
-                            <span>All AI Tools Access</span>
+                            <span class="feature-text">10,000 AI requests/month</span>
                         </div>
                         <div class="feature-item">
                             <i class="fas fa-check"></i>
-                            <span>Priority Email & Chat Support</span>
+                            <span class="feature-text">Advanced Analytics Dashboard</span>
                         </div>
                         <div class="feature-item">
                             <i class="fas fa-check"></i>
-                            <span>Advanced Analytics</span>
+                            <span class="feature-text">Priority Support</span>
                         </div>
                         <div class="feature-item">
                             <i class="fas fa-check"></i>
-                            <span>Custom AI Models</span>
+                            <span class="feature-text">Custom AI Models</span>
                         </div>
-                        <div class="feature-item disabled">
-                            <i class="fas fa-times"></i>
-                            <span>Dedicated Account Manager</span>
+                        <div class="feature-item">
+                            <i class="fas fa-check"></i>
+                            <span class="feature-text">Advanced Workflows</span>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-check"></i>
+                            <span class="feature-text">API Access</span>
                         </div>
                     </div>
-                    <button class="btn btn-primary" style="width: 100%;">Get Started</button>
+                    
+                    <div class="plan-button">
+                        <button class="btn btn-primary" style="width: 100%;">Get Started</button>
+                    </div>
                 </div>
-
+                
                 <!-- Enterprise Plan -->
-                <div class="plan-card">
-                    <div class="plan-header">
-                        <h3 class="plan-name">Enterprise</h3>
-                        <p class="plan-description">For large organizations with custom needs</p>
-                        <div class="plan-price">
-                            <span class="price-amount">$199</span>
-                            <span class="price-period">/month</span>
-                        </div>
+                <div class="plan-card floating delay-2">
+                    <div class="plan-icon">
+                        <i class="fas fa-crown"></i>
                     </div>
+                    <h3 class="plan-name">Enterprise</h3>
+                    <p class="plan-description">For large organizations with custom AI requirements</p>
+                    
+                    <div class="plan-price">
+                        <div class="price-amount monthly-price">$199</div>
+                        <div class="price-amount annual-price" style="display: none;">$159<span style="font-size: 1.5rem;">.20</span></div>
+                        <div class="price-period">per month</div>
+                        <div class="price-note annual-price" style="display: none;">billed annually</div>
+                    </div>
+                    
                     <div class="plan-features">
                         <div class="feature-item">
                             <i class="fas fa-check"></i>
-                            <span>Unlimited AI Agents</span>
+                            <span class="feature-text">Unlimited AI Agents</span>
                         </div>
                         <div class="feature-item">
                             <i class="fas fa-check"></i>
-                            <span>1M+ API calls/month</span>
+                            <span class="feature-text">Unlimited Automation Workflows</span>
                         </div>
                         <div class="feature-item">
                             <i class="fas fa-check"></i>
-                            <span>All AI Tools + Beta Features</span>
+                            <span class="feature-text">100,000 AI requests/month</span>
                         </div>
                         <div class="feature-item">
                             <i class="fas fa-check"></i>
-                            <span>24/7 Phone & Chat Support</span>
+                            <span class="feature-text">Custom Analytics Dashboard</span>
                         </div>
                         <div class="feature-item">
                             <i class="fas fa-check"></i>
-                            <span>Advanced Analytics & Reporting</span>
+                            <span class="feature-text">Dedicated Account Manager</span>
                         </div>
                         <div class="feature-item">
                             <i class="fas fa-check"></i>
-                            <span>Fully Custom AI Models</span>
+                            <span class="feature-text">Custom AI Models</span>
                         </div>
                         <div class="feature-item">
                             <i class="fas fa-check"></i>
-                            <span>Dedicated Account Manager</span>
+                            <span class="feature-text">Advanced Workflows</span>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-check"></i>
+                            <span class="feature-text">Full API Access</span>
                         </div>
                     </div>
-                    <button class="btn btn-outline" style="width: 100%;">Contact Sales</button>
-                </div>
-            </div>
-
-            <!-- FAQ Section -->
-            <div class="faq-section">
-                <h2 class="section-title">Frequently Asked Questions</h2>
-                <div class="faq-grid">
-                    <div class="faq-item">
-                        <div class="faq-question">
-                            <span>Can I change plans anytime?</span>
-                            <div class="faq-toggle">
-                                <i class="fas fa-chevron-down"></i>
-                            </div>
-                        </div>
-                        <div class="faq-answer">
-                            Yes, you can upgrade or downgrade your plan at any time. When upgrading, you'll be charged the prorated difference for the remainder of your billing cycle. When downgrading, the changes will take effect at the start of your next billing cycle.
-                        </div>
-                    </div>
-                    <div class="faq-item">
-                        <div class="faq-question">
-                            <span>Is there a free trial available?</span>
-                            <div class="faq-toggle">
-                                <i class="fas fa-chevron-down"></i>
-                            </div>
-                        </div>
-                        <div class="faq-answer">
-                            Yes, we offer a 14-day free trial for all our plans. You'll have full access to all features during the trial period. No credit card is required to start your trial.
-                        </div>
-                    </div>
-                    <div class="faq-item">
-                        <div class="faq-question">
-                            <span>What payment methods do you accept?</span>
-                            <div class="faq-toggle">
-                                <i class="fas fa-chevron-down"></i>
-                            </div>
-                        </div>
-                        <div class="faq-answer">
-                            We accept all major credit cards (Visa, MasterCard, American Express), PayPal, and bank transfers for annual plans. All payments are processed securely through our payment partners.
-                        </div>
-                    </div>
-                    <div class="faq-item">
-                        <div class="faq-question">
-                            <span>Do you offer discounts for non-profits?</span>
-                            <div class="faq-toggle">
-                                <i class="fas fa-chevron-down"></i>
-                            </div>
-                        </div>
-                        <div class="faq-answer">
-                            Yes, we offer a 25% discount for registered non-profit organizations. Please contact our sales team with proof of your non-profit status to apply for this discount.
-                        </div>
-                    </div>
-                    <div class="faq-item">
-                        <div class="faq-question">
-                            <span>How does the API call limit work?</span>
-                            <div class="faq-toggle">
-                                <i class="fas fa-chevron-down"></i>
-                            </div>
-                        </div>
-                        <div class="faq-answer">
-                            API calls are counted whenever you make a request to our AI models. This includes text generation, image processing, data analysis, and any other interactions with our AI services. Unused API calls do not roll over to the next month.
-                        </div>
-                    </div>
-                    <div class="faq-item">
-                        <div class="faq-question">
-                            <span>Can I cancel my subscription anytime?</span>
-                            <div class="faq-toggle">
-                                <i class="fas fa-chevron-down"></i>
-                            </div>
-                        </div>
-                        <div class="faq-answer">
-                            Absolutely. You can cancel your subscription at any time from your account settings. If you cancel during a billing period, you'll retain access to all features until the end of that period.
-                        </div>
+                    
+                    <div class="plan-button">
+                        <button class="btn btn-outline" style="width: 100%;">Contact Sales</button>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Enterprise Section -->
-    <section class="enterprise-section">
+    <!-- Service Tiers Section -->
+    <section class="service-tiers">
         <div class="container">
-            <div class="enterprise-content pulse">
-                <h2>Need a Custom Solution?</h2>
-                <p>Our enterprise plans offer fully customized AI solutions tailored to your specific business needs, with dedicated support and advanced security features.</p>
-                <div class="enterprise-features">
-                    <div class="enterprise-feature">
-                        <i class="fas fa-check"></i>
-                        <span>Custom AI Model Training</span>
+            <h2 class="section-title">Specialized AI Service Tiers</h2>
+            <p class="section-subtitle">Choose from our specialized service tiers tailored to specific AI needs and use cases.</p>
+            
+            <div class="tiers-container">
+                <div class="tier-card floating">
+                    <div class="tier-icon">
+                        <i class="fas fa-robot"></i>
                     </div>
-                    <div class="enterprise-feature">
-                        <i class="fas fa-check"></i>
-                        <span>Dedicated Infrastructure</span>
+                    <h3>AI Agents Tier</h3>
+                    <p>Advanced autonomous agents for complex task execution and decision making</p>
+                    <div class="tier-price">From $49/month</div>
+                    <div class="tier-features">
+                        <div class="tier-feature">
+                            <i class="fas fa-check"></i>
+                            <span>Multi-step task execution</span>
+                        </div>
+                        <div class="tier-feature">
+                            <i class="fas fa-check"></i>
+                            <span>Decision-making capabilities</span>
+                        </div>
+                        <div class="tier-feature">
+                            <i class="fas fa-check"></i>
+                            <span>Learning from outcomes</span>
+                        </div>
+                        <div class="tier-feature">
+                            <i class="fas fa-check"></i>
+                            <span>Integration with external APIs</span>
+                        </div>
                     </div>
-                    <div class="enterprise-feature">
-                        <i class="fas fa-check"></i>
-                        <span>SLA Guarantee</span>
+                    <button class="btn btn-outline">Learn More</button>
+                </div>
+                
+                <div class="tier-card floating delay-1">
+                    <div class="tier-icon">
+                        <i class="fas fa-comment-dots"></i>
                     </div>
-                    <div class="enterprise-feature">
-                        <i class="fas fa-check"></i>
-                        <span>Advanced Security & Compliance</span>
+                    <h3>AI Chatbots Tier</h3>
+                    <p>Intelligent conversational agents for customer engagement and support</p>
+                    <div class="tier-price">From $39/month</div>
+                    <div class="tier-features">
+                        <div class="tier-feature">
+                            <i class="fas fa-check"></i>
+                            <span>Natural language understanding</span>
+                        </div>
+                        <div class="tier-feature">
+                            <i class="fas fa-check"></i>
+                            <span>Multi-channel deployment</span>
+                        </div>
+                        <div class="tier-feature">
+                            <i class="fas fa-check"></i>
+                            <span>Sentiment analysis</span>
+                        </div>
+                        <div class="tier-feature">
+                            <i class="fas fa-check"></i>
+                            <span>Custom knowledge bases</span>
+                        </div>
+                    </div>
+                    <button class="btn btn-outline">Learn More</button>
+                </div>
+                
+                <div class="tier-card floating delay-2">
+                    <div class="tier-icon">
+                        <i class="fas fa-cogs"></i>
+                    </div>
+                    <h3>Automation Tier</h3>
+                    <p>Streamline workflows and automate repetitive tasks with AI</p>
+                    <div class="tier-price">From $59/month</div>
+                    <div class="tier-features">
+                        <div class="tier-feature">
+                            <i class="fas fa-check"></i>
+                            <span>Workflow automation</span>
+                        </div>
+                        <div class="tier-feature">
+                            <i class="fas fa-check"></i>
+                            <span>Process optimization</span>
+                        </div>
+                        <div class="tier-feature">
+                            <i class="fas fa-check"></i>
+                            <span>Data processing automation</span>
+                        </div>
+                        <div class="tier-feature">
+                            <i class="fas fa-check"></i>
+                            <span>Custom automation rules</span>
+                        </div>
+                    </div>
+                    <button class="btn btn-outline">Learn More</button>
+                </div>
+            </div>
+            
+            <h3 class="section-title" style="margin-top: 80px; font-size: 2rem;">All AI Services</h3>
+            
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-brain"></i>
+                    </div>
+                    <h3>Predictive Analytics</h3>
+                    <p>Forecast trends and behaviors with machine learning models</p>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-language"></i>
+                    </div>
+                    <h3>Natural Language Processing</h3>
+                    <p>Understand context, sentiment, and intent in human language</p>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-chart-bar"></i>
+                    </div>
+                    <h3>Data Analysis</h3>
+                    <p>Transform raw data into actionable insights with AI</p>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-image"></i>
+                    </div>
+                    <h3>Computer Vision</h3>
+                    <p>Analyze and understand visual content with AI</p>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-file-alt"></i>
+                    </div>
+                    <h3>Document Processing</h3>
+                    <p>Automate document analysis, classification, and extraction</p>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3>AI Security</h3>
+                    <p>Protect your systems with AI-powered threat detection</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq">
+        <div class="container">
+            <h2 class="section-title">Frequently Asked Questions</h2>
+            <p class="section-subtitle">Find answers to common questions about our pricing and services.</p>
+            
+            <div class="faq-container">
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>Can I mix and match services from different tiers?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Yes! Our platform is designed to be flexible. You can combine services from different tiers to create a custom solution that fits your specific needs. Contact our sales team for assistance with custom configurations.</p>
                     </div>
                 </div>
-                <button class="btn btn-accent btn-large">Contact Enterprise Sales</button>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>How do AI requests work across different services?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>AI requests are counted across all services. Each interaction (chat message, data analysis, workflow execution, etc.) counts as one request. Your monthly limit is shared across all AI services you use.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>Do you offer custom enterprise solutions?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Absolutely! Our Enterprise plan is fully customizable to meet your specific requirements. We can create tailored solutions with custom pricing, dedicated infrastructure, and specialized features. Contact our sales team to discuss your needs.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>Can I upgrade or downgrade my plan later?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Yes, you can change your plan at any time. When upgrading, you'll get immediate access to the new features. When downgrading, the changes will take effect at the start of your next billing cycle.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>What happens if I exceed my monthly AI request limit?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>If you exceed your monthly limit, you can purchase additional request packs or upgrade your plan. We'll notify you when you're approaching your limit to avoid any service interruptions.</p>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -301,11 +454,10 @@
     <!-- CTA Section -->
     <section class="cta">
         <div class="container">
-            <div class="cta-content">
-                <h2>Ready to Get Started?</h2>
-                <p>Join thousands of businesses using Nexus AI to transform their workflows and drive innovation.</p>
-                <button class="btn btn-primary btn-large">Start Your Free Trial</button>
-                <p style="margin-top: 20px; font-size: 0.9rem; color: rgba(255, 255, 255, 0.6);">No credit card required • 14-day free trial • Cancel anytime</p>
+            <div class="cta-content pulse">
+                <h2>Ready to Transform Your Business with AI?</h2>
+                <p>Join thousands of forward-thinking companies leveraging our AI tools to drive innovation and efficiency.</p>
+                <button class="btn btn-primary">Start Free Trial</button>
             </div>
         </div>
     </section>
@@ -328,13 +480,13 @@
                     </div>
                 </div>
                 <div class="footer-column">
-                    <h3>Products</h3>
+                    <h3>AI Services</h3>
                     <ul class="footer-links">
-                        <li><a href="#">AI Chatbots</a></li>
                         <li><a href="#">AI Agents</a></li>
+                        <li><a href="#">AI Chatbots</a></li>
                         <li><a href="#">Automation Tools</a></li>
-                        <li><a href="#">API Documentation</a></li>
-                        <li><a href="#">Pricing</a></li>
+                        <li><a href="#">Predictive Analytics</a></li>
+                        <li><a href="#">Computer Vision</a></li>
                     </ul>
                 </div>
                 <div class="footer-column">
