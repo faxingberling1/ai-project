@@ -423,6 +423,14 @@
             border-color: var(--primary);
         }
 
+        .current-month {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: white;
+            text-align: center;
+            margin-bottom: 15px;
+        }
+
         /* Benefits Section */
         .benefits-section {
             padding: 60px 0;
@@ -686,45 +694,6 @@
             border-top: 1px solid var(--glass-border);
             color: rgba(255, 255, 255, 0.5);
             font-size: 0.9rem;
-        }
-
-        /* Animations */
-        @keyframes float {
-            0%, 100% {
-                transform: translateY(0);
-            }
-            50% {
-                transform: translateY(-10px);
-            }
-        }
-
-        .floating {
-            animation: float 6s ease-in-out infinite;
-        }
-
-        .delay-1 {
-            animation-delay: 1s;
-        }
-
-        .delay-2 {
-            animation-delay: 2s;
-        }
-
-        .delay-3 {
-            animation-delay: 3s;
-        }
-
-        @keyframes pulse {
-            0%, 100% {
-                transform: scale(1);
-            }
-            50% {
-                transform: scale(1.05);
-            }
-        }
-
-        .pulse {
-            animation: pulse 4s ease-in-out infinite;
         }
 
         /* Success Message */
