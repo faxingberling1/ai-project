@@ -1,1 +1,367 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Tools | Nexus AI</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/ai-tools.css">
+    <script src="script/ai-tools.js"></script>
+</head>
+  <body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <nav class="navbar">
+                <div class="logo">
+                    <i class="fas fa-robot"></i>
+                    <span>Nexus AI</span>
+                </div>
+                <div class="nav-links">
+                    <a href="index.html">Home</a>
+                    <a href="ai-tools.html">AI Tools</a>
+                    <a href="ai-agents.html">AI Agents</a>
+                    <a href="pricing.html" class="active">Pricing</a>
+                    <a href="blog.html">Blog</a>
+                </div>
+                <div class="nav-buttons">
+                    <button class="btn btn-outline">Sign In</button>
+                    <button class="btn btn-primary">Get Started</button>
+                </div>
+            </nav>
+        </div>
+    </header>
 
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1>Simple, Transparent Pricing</h1>
+            <p>Choose the perfect plan for your needs. All plans include access to our core AI tools with no hidden fees.</p>
+            <div class="hero-buttons">
+                <button class="btn btn-primary">Start Free Trial</button>
+                <button class="btn btn-outline">Schedule Demo</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Billing Toggle -->
+    <section class="billing-toggle">
+        <div class="container">
+            <div style="display: flex; align-items: center; gap: 20px; justify-content: center;">
+                <span class="toggle-label active">Monthly</span>
+                <label class="toggle-switch">
+                    <input type="checkbox" id="billingToggle">
+                    <span class="toggle-slider"></span>
+                </label>
+                <span class="toggle-label">Annual <span class="savings-badge">Save 20%</span></span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Plans -->
+    <section class="pricing-plans">
+        <div class="container">
+            <div class="plans-grid">
+                <!-- Starter Plan -->
+                <div class="plan-card">
+                    <div class="plan-header">
+                        <h3 class="plan-name">Starter</h3>
+                        <p class="plan-description">Perfect for individuals and small projects</p>
+                        <div class="plan-price">
+                            <span class="price-amount">$29</span>
+                            <span class="price-period">/month</span>
+                        </div>
+                    </div>
+                    <div class="plan-features">
+                        <div class="feature-item">
+                            <i class="fas fa-check"></i>
+                            <span>Up to 5 AI Agents</span>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-check"></i>
+                            <span>10,000 API calls/month</span>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-check"></i>
+                            <span>Basic AI Tools Access</span>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-check"></i>
+                            <span>Email Support</span>
+                        </div>
+                        <div class="feature-item disabled">
+                            <i class="fas fa-times"></i>
+                            <span>Advanced Analytics</span>
+                        </div>
+                        <div class="feature-item disabled">
+                            <i class="fas fa-times"></i>
+                            <span>Custom AI Models</span>
+                        </div>
+                        <div class="feature-item disabled">
+                            <i class="fas fa-times"></i>
+                            <span>Priority Support</span>
+                        </div>
+                    </div>
+                    <button class="btn btn-outline" style="width: 100%;">Get Started</button>
+                </div>
+
+                <!-- Professional Plan -->
+                <div class="plan-card popular">
+                    <div class="plan-popular-badge">Most Popular</div>
+                    <div class="plan-header">
+                        <h3 class="plan-name">Professional</h3>
+                        <p class="plan-description">Ideal for growing businesses and teams</p>
+                        <div class="plan-price">
+                            <span class="price-amount">$79</span>
+                            <span class="price-period">/month</span>
+                        </div>
+                    </div>
+                    <div class="plan-features">
+                        <div class="feature-item">
+                            <i class="fas fa-check"></i>
+                            <span>Up to 20 AI Agents</span>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-check"></i>
+                            <span>100,000 API calls/month</span>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-check"></i>
+                            <span>All AI Tools Access</span>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-check"></i>
+                            <span>Priority Email & Chat Support</span>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-check"></i>
+                            <span>Advanced Analytics</span>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-check"></i>
+                            <span>Custom AI Models</span>
+                        </div>
+                        <div class="feature-item disabled">
+                            <i class="fas fa-times"></i>
+                            <span>Dedicated Account Manager</span>
+                        </div>
+                    </div>
+                    <button class="btn btn-primary" style="width: 100%;">Get Started</button>
+                </div>
+
+                <!-- Enterprise Plan -->
+                <div class="plan-card">
+                    <div class="plan-header">
+                        <h3 class="plan-name">Enterprise</h3>
+                        <p class="plan-description">For large organizations with custom needs</p>
+                        <div class="plan-price">
+                            <span class="price-amount">$199</span>
+                            <span class="price-period">/month</span>
+                        </div>
+                    </div>
+                    <div class="plan-features">
+                        <div class="feature-item">
+                            <i class="fas fa-check"></i>
+                            <span>Unlimited AI Agents</span>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-check"></i>
+                            <span>1M+ API calls/month</span>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-check"></i>
+                            <span>All AI Tools + Beta Features</span>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-check"></i>
+                            <span>24/7 Phone & Chat Support</span>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-check"></i>
+                            <span>Advanced Analytics & Reporting</span>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-check"></i>
+                            <span>Fully Custom AI Models</span>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-check"></i>
+                            <span>Dedicated Account Manager</span>
+                        </div>
+                    </div>
+                    <button class="btn btn-outline" style="width: 100%;">Contact Sales</button>
+                </div>
+            </div>
+
+            <!-- FAQ Section -->
+            <div class="faq-section">
+                <h2 class="section-title">Frequently Asked Questions</h2>
+                <div class="faq-grid">
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <span>Can I change plans anytime?</span>
+                            <div class="faq-toggle">
+                                <i class="fas fa-chevron-down"></i>
+                            </div>
+                        </div>
+                        <div class="faq-answer">
+                            Yes, you can upgrade or downgrade your plan at any time. When upgrading, you'll be charged the prorated difference for the remainder of your billing cycle. When downgrading, the changes will take effect at the start of your next billing cycle.
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <span>Is there a free trial available?</span>
+                            <div class="faq-toggle">
+                                <i class="fas fa-chevron-down"></i>
+                            </div>
+                        </div>
+                        <div class="faq-answer">
+                            Yes, we offer a 14-day free trial for all our plans. You'll have full access to all features during the trial period. No credit card is required to start your trial.
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <span>What payment methods do you accept?</span>
+                            <div class="faq-toggle">
+                                <i class="fas fa-chevron-down"></i>
+                            </div>
+                        </div>
+                        <div class="faq-answer">
+                            We accept all major credit cards (Visa, MasterCard, American Express), PayPal, and bank transfers for annual plans. All payments are processed securely through our payment partners.
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <span>Do you offer discounts for non-profits?</span>
+                            <div class="faq-toggle">
+                                <i class="fas fa-chevron-down"></i>
+                            </div>
+                        </div>
+                        <div class="faq-answer">
+                            Yes, we offer a 25% discount for registered non-profit organizations. Please contact our sales team with proof of your non-profit status to apply for this discount.
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <span>How does the API call limit work?</span>
+                            <div class="faq-toggle">
+                                <i class="fas fa-chevron-down"></i>
+                            </div>
+                        </div>
+                        <div class="faq-answer">
+                            API calls are counted whenever you make a request to our AI models. This includes text generation, image processing, data analysis, and any other interactions with our AI services. Unused API calls do not roll over to the next month.
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <span>Can I cancel my subscription anytime?</span>
+                            <div class="faq-toggle">
+                                <i class="fas fa-chevron-down"></i>
+                            </div>
+                        </div>
+                        <div class="faq-answer">
+                            Absolutely. You can cancel your subscription at any time from your account settings. If you cancel during a billing period, you'll retain access to all features until the end of that period.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Enterprise Section -->
+    <section class="enterprise-section">
+        <div class="container">
+            <div class="enterprise-content pulse">
+                <h2>Need a Custom Solution?</h2>
+                <p>Our enterprise plans offer fully customized AI solutions tailored to your specific business needs, with dedicated support and advanced security features.</p>
+                <div class="enterprise-features">
+                    <div class="enterprise-feature">
+                        <i class="fas fa-check"></i>
+                        <span>Custom AI Model Training</span>
+                    </div>
+                    <div class="enterprise-feature">
+                        <i class="fas fa-check"></i>
+                        <span>Dedicated Infrastructure</span>
+                    </div>
+                    <div class="enterprise-feature">
+                        <i class="fas fa-check"></i>
+                        <span>SLA Guarantee</span>
+                    </div>
+                    <div class="enterprise-feature">
+                        <i class="fas fa-check"></i>
+                        <span>Advanced Security & Compliance</span>
+                    </div>
+                </div>
+                <button class="btn btn-accent btn-large">Contact Enterprise Sales</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta">
+        <div class="container">
+            <div class="cta-content">
+                <h2>Ready to Get Started?</h2>
+                <p>Join thousands of businesses using Nexus AI to transform their workflows and drive innovation.</p>
+                <button class="btn btn-primary btn-large">Start Your Free Trial</button>
+                <p style="margin-top: 20px; font-size: 0.9rem; color: rgba(255, 255, 255, 0.6);">No credit card required • 14-day free trial • Cancel anytime</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <div class="logo">
+                        <i class="fas fa-robot"></i>
+                        <span>Nexus AI</span>
+                    </div>
+                    <p style="margin-top: 20px; color: rgba(255,255,255,0.7);">Empowering businesses with cutting-edge AI solutions.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#"><i class="fab fa-github"></i></a>
+                        <a href="#"><i class="fab fa-discord"></i></a>
+                    </div>
+                </div>
+                <div class="footer-column">
+                    <h3>Products</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">AI Chatbots</a></li>
+                        <li><a href="#">AI Agents</a></li>
+                        <li><a href="#">Automation Tools</a></li>
+                        <li><a href="#">API Documentation</a></li>
+                        <li><a href="#">Pricing</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Resources</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">Documentation</a></li>
+                        <li><a href="#">Tutorials</a></li>
+                        <li><a href="#">Blog</a></li>
+                        <li><a href="#">Case Studies</a></li>
+                        <li><a href="#">Community</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Company</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">Careers</a></li>
+                        <li><a href="#">Contact</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Terms of Service</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2023 Nexus AI. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+  </body>
+</html>
