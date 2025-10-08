@@ -7,7 +7,14 @@
             // Generate calendar
             function generateCalendar(date) {
                 const calendar = document.getElementById('calendar');
+                const currentMonthElement = document.getElementById('currentMonth');
                 calendar.innerHTML = '';
+
+                // Update current month display
+                const monthNames = ["January", "February", "March", "April", "May", "June",
+                    "July", "August", "September", "October", "November", "December"
+                ];
+                currentMonthElement.textContent = `${monthNames[date.getMonth()]} ${date.getFullYear()}`;
 
                 // Add weekday headers
                 const weekdays = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
@@ -28,18 +35,27 @@
                 for (let i = 0; i < startingDay; i++) {
                     const emptyDay = document.createElement('div');
                     emptyDay.className = 'calendar-day other-month';
+                    emptyDay.textContent = '';
                     calendar.appendChild(emptyDay);
                 }
 
                 // Add days of the month
+                const today = new Date();
                 for (let i = 1; i <= daysInMonth; i++) {
                     const dayElement = document.createElement('div');
                     dayElement.className = 'calendar-day available';
                     dayElement.textContent = i;
-                    dayElement.dataset.date = `${date.getFullYear()}-${date.getMonth() + 1}-${i}`;
-
-                    // Mark some days as unavailable (for demo purposes)
-                    if (Math.random() > 0.7) {
+                    
+                    const dayDate = new Date(date.getFullYear(), date.getMonth(), i);
+                    
+                    // Mark past days as unavailable
+                    if (dayDate < today) {
+                        dayElement.classList.remove('available');
+                        dayElement.classList.add('unavailable');
+                    }
+                    
+                    // Mark some future days as unavailable (for demo purposes)
+                    else if (Math.random() > 0.7 && dayDate > new Date(today.getTime() + 2 * 24 * 60 * 60 * 1000)) {
                         dayElement.classList.remove('available');
                         dayElement.classList.add('unavailable');
                     }
@@ -53,7 +69,7 @@
                             
                             // Add selected class to clicked day
                             this.classList.add('selected');
-                            selectedDate = this.dataset.date;
+                            selectedDate = new Date(date.getFullYear(), date.getMonth(), i);
                             
                             // Update form field
                             document.getElementById('preferredDate').value = formatDate(selectedDate);
@@ -102,8 +118,7 @@
             }
 
             // Format date for display
-            function formatDate(dateString) {
-                const date = new Date(dateString);
+            function formatDate(date) {
                 return date.toLocaleDateString('en-US', { 
                     weekday: 'long', 
                     year: 'numeric', 
@@ -129,6 +144,11 @@
             // Form submission
             document.getElementById('demoForm').addEventListener('submit', function(e) {
                 e.preventDefault();
+                
+                if (!selectedDate || !selectedTime) {
+                    alert('Please select both a date and time for your demo.');
+                    return;
+                }
                 
                 // In a real application, you would send the form data to a server here
                 // For this demo, we'll just show the success message
